@@ -1,0 +1,36 @@
+.Launch {
+    padding: 1rem;
+    cursor: pointer;
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden;
+}
+
+.background {
+    z-index: -1;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: 0.5s;
+    top: 200%;
+    left: 0;
+    rotate: 10deg;
+}
+
+.text {
+    transition: 1s;
+    text-transform: uppercase;
+    color: black;
+}
+
+.Launch:hover {
+    .background {
+        top: 0;
+        rotate: 0deg;
+    }
+    .text {
+        color: white;
+    }
+}
+
