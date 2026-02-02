@@ -1,0 +1,13 @@
+.carre {
+    background-color: black;
+    width: 10vw;
+    height: 10vw;
+    border-radius: 0.5rem;
+
+    animation: carre ease infinite 3s;
+}
+
+@keyframes carre {
+    50% {transform: rotate(360deg);}
+    75% {transform: scale(0.2);}
+}
