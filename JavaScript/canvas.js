@@ -6,7 +6,7 @@ const canvasHeight = Math.floor(canvas.clientHeight * dpr);
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
 
-squareSize = 25
+squareSize = canvasHeight/2
 
 // // carré
 // context.fillStyle = "blue"
@@ -57,14 +57,13 @@ Subdivision = 13;
 squareSize = canvas.width/Subdivision
 let positionX = 0;
 let positionY = 0;
+let alternator = 1
 
 context.fillStyle = "black"
 
-
-
 for (let stepY = 0; stepY < Subdivision; stepY++) {
     for (let stepX = 0; stepX < Subdivision/2; stepX++) {
-        console.log(positionY, positionX);
+        console.log(positionY, positionX, alternator);
 
         context.fillRect(
         positionX,
@@ -74,6 +73,14 @@ for (let stepY = 0; stepY < Subdivision; stepY++) {
         )
         positionX = positionX + squareSize*2;
     }
-    positionX = 0;
+
+    if (alternator == 0) {
+        positionX = 0;
+        alternator = 1;
+    } else {
+        positionX = squareSize;
+        alternator = 0;
+    }
+
     positionY = positionY + squareSize;
 }
