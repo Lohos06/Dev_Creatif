@@ -84,3 +84,32 @@ for (let stepY = 0; stepY < Subdivision; stepY++) {
 
     positionY = positionY + squareSize;
 }
+
+// // carre anime
+// let x = 0
+
+// function drawSquare(x, y, squareSize) {
+//     context.fillStyle = "blue"
+//     context.fillRect(
+//         x, 
+//         y, 
+//         squareSize, 
+//         squareSize
+//     )
+
+// }
+
+// function loop() {
+//     context.fillStyle = "white";
+//     context.fillRect(0,0,canvasWidth,canvasHeight);
+//     drawSquare(x, 100, 100);
+    
+//     if (x + squareSize/2 != canvasWidth) {
+//         x++;
+//     } else {
+//         x = 0;
+//     }
+//     requestAnimationFrame(loop)
+// }
+
+// loop()
