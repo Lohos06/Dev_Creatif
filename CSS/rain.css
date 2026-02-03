@@ -1,0 +1,36 @@
+.rainContent {
+  position: relative;
+  width: 100svw;
+  height: 100svh;
+  background-color: black;
+  overflow: hidden;
+}
+
+.waterDrop {
+  position: absolute;
+  left: var(--xPosition);
+  background-color: lightblue;
+  width: 2px;
+  height: 15px;
+  animation: drop linear 2s forwards;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(90svh);
+  }
+}
+
+.startRain, .stopRain {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: lightblue;
+  border: 0.2rem solid lightblue;
+}
+
+.startRain:hover, .stopRain:hover {
+  background-color: rgb(0, 191, 255);
+}
