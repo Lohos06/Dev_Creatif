@@ -11,7 +11,7 @@
     background-color: var(--snow);
     width: 2px;
     height: 10px;
-    left: 50%;
+    left: var(--fireworkPosition);
     bottom: 0%;
     animation: arise ease 2s forwards;
 }
@@ -27,19 +27,23 @@
 }
 
 @keyframes arise {
-    from {
-        transform: translate(0, 0);
-    }
-    to {
-        transform: translate(0, -300px);
-    }
+    from {transform: translate(0, 0);}
+    to {transform: translate(0, var(--fireworkAltitude));}
 }
 
 @keyframes explosion {
-    from {
-        transform: translate(0, 0);
-    }
-    to {
-        transform: translate(var(--xDirection), var(--yDirection));
-    }
+    from {transform: translate(0, 0);}
+    to {transform: translate(var(--xDirection), var(--yDirection));}
+}
+
+.startFirework, .stopFirework {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--skyBlue);
+  border: 0.2rem solid var(--skyBlue);
+}
+
+.startFirework:hover, .stopFirework:hover {
+  background-color: var(--nightBlue);
+  color: var(--snow);
 }

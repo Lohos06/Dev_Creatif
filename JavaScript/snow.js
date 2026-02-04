@@ -25,7 +25,7 @@ function startSnow() {
     snowInterval = setInterval(() => {
         xPosition = Math.random() * window.innerWidth;
         snowFlake(xPosition);
-    }, 1);
+    }, 20);
 }
 
 // fonction pour arreter la neige
