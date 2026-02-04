@@ -1,14 +1,14 @@
 .fireworkContainer {
   position: relative;
   width: 100svw;
-  height: 90svh;
+  height: 100svh;
   background-color: var(--nightBlue);
   overflow: hidden;
 }
 
 .firework {
     position: absolute;
-    background-color: var(--snow);
+    background-color: var(--fireworkColor);
     width: 2px;
     height: 10px;
     left: var(--fireworkPosition);
@@ -20,7 +20,7 @@
     position: absolute;
     left: var(--xPosition);
     top : var(--yPosition);
-    background-color: var(--snow);
+    background-color: var(--particuleColor);
     width: 2px;
     height: 2px;
     animation: explosion ease 1s forwards;
@@ -34,16 +34,4 @@
 @keyframes explosion {
     from {transform: translate(0, 0);}
     to {transform: translate(var(--xDirection), var(--yDirection));}
-}
-
-.startFirework, .stopFirework {
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  background-color: var(--skyBlue);
-  border: 0.2rem solid var(--skyBlue);
-}
-
-.startFirework:hover, .stopFirework:hover {
-  background-color: var(--nightBlue);
-  color: var(--snow);
 }

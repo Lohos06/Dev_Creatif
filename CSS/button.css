@@ -1,0 +1,11 @@
+.button{
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--skyBlue);
+  border: 0.2rem solid var(--skyBlue);
+}
+
+.button:hover {
+  background-color: var(--nightBlue);
+  color: var(--snow);
+}

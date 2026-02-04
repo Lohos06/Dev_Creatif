@@ -1,7 +1,7 @@
 .snowContainer {
   position: relative;
   width: 100svw;
-  height: 90svh;
+  height: 100svh;
   background: linear-gradient(
     to bottom,
     var(--nightBlue),
@@ -27,18 +27,6 @@
     transform: translateY(-20px);
   }
   100% {
-    transform: translateY(80svh);
+    transform: translateY(90svh);
   }
-}
-
-.startSnow, .stopSnow {
-  padding: 1rem 2rem;
-  border-radius: 1rem;
-  background-color: var(--skyBlue);
-  border: 0.2rem solid var(--skyBlue);
-}
-
-.startSnow:hover, .stopSnow:hover {
-  background-color: var(--nightBlue);
-  color: var(--snow);
 }

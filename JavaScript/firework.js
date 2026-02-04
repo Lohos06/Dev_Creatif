@@ -4,9 +4,25 @@ const fireworkContainer = document.getElementById('fireworkContainer');
 const particleNumber = 500;
 const dispersion = 200;
 
+const colors = [
+  "#FF6B6B", // rouge vif
+  "#FFD93D", // jaune vif
+  "#6BCB77", // vert vif
+  "#4D96FF", // bleu clair
+  "#FF6FF3", // rose fluo
+  "#FFA36C", // orange clair
+  "#00F7FF", // cyan néon
+  "#FFEC59", // jaune pastel lumineux
+  "#FF3C38", // rouge néon
+  "#C084FC", // violet clair
+  "#F9F871"  // jaune très clair
+];
+let color = "#00F7FF";
+
 function firework() {
-    fireworkPosition = window.innerWidth*0.1 + (Math.random() * window.innerWidth * 0.9);
-    fireworkAltitude = -(window.innerHeight*0.2 + (Math.random() * window.innerHeight * 0.5));
+    let fireworkPosition = window.innerWidth*0.1 + (Math.random() * window.innerWidth * 0.9);
+    let fireworkAltitude = -(window.innerHeight*0.2 + (Math.random() * window.innerHeight * 0.5));
+    let fireworkColor = getFireworkColor();
 
     const firework = document.createElement('span');
     firework.classList.add('firework');
@@ -14,10 +30,12 @@ function firework() {
     firework.style.setProperty('--fireworkPosition', `${fireworkPosition}px`);
     firework.style.setProperty('--fireworkAltitude', `${fireworkAltitude}px`);
 
+    firework.style.setProperty('--fireworkColor', `${fireworkColor}`);
+
     fireworkContainer.appendChild(firework);
 
     firework.addEventListener('animationend', () => {  
-        explosion(firework); 
+        explosion(firework, fireworkColor); 
         fireworkContainer.removeChild(firework);
     });
 }
@@ -30,7 +48,16 @@ function getPosition(firework) {
     return positions;
 }
 
-function explosion(firework) {
+function getFireworkColor() {
+    let colorNumber = Math.round(Math.random() * 10);
+
+    if (colors[colorNumber] === undefined) { color = "#D64D31"; } 
+    else { color = colors[colorNumber] }
+
+    return color
+}
+
+function explosion(firework, fireworkColor) {
     const positions = getPosition(firework);
     for (let i=0; i<particleNumber; i++) {
         const angle = Math.random() * Math.PI * 2;
@@ -43,6 +70,7 @@ function explosion(firework) {
         particle.style.setProperty('--yPosition', `${positions[1]}px`);
         particle.style.setProperty('--xDirection', `${Math.cos(angle) * distance}px`);
         particle.style.setProperty('--yDirection', `${Math.sin(angle) * distance}px`);
+        particle.style.setProperty('--particuleColor', `${fireworkColor}`);
 
         fireworkContainer.appendChild(particle);
 
@@ -64,6 +92,8 @@ function startFirework() {
 function stopFirework() {
     clearInterval(fireworkInterval);
 }
+
+startFirework();
 
 const startFireworkButton = document.getElementById('startFirework');
 const stopFireworkButton = document.getElementById('stopFirework');
