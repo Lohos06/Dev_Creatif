@@ -1,0 +1,44 @@
+.snowContent {
+  position: relative;
+  width: 100svw;
+  height: 90svh;
+  background: linear-gradient(
+    to bottom,
+    var(--nightBlue),
+    var(--skyBlue) 50%,
+    var(--skyBlue) 84%,
+    var(--snow) 85%,
+    var(--snow) 100%
+  );
+  overflow: hidden;
+}
+
+.snowFlake {
+  position: absolute;
+  left: var(--xPosition);
+  background-color: var(--snow);
+  width: 2px;
+  height: 2px;
+  animation: drop linear 4s forwards;
+}
+
+@keyframes drop {
+  0% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(80svh);
+  }
+}
+
+.startSnow, .stopSnow {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--skyBlue);
+  border: 0.2rem solid var(--skyBlue);
+}
+
+.startSnow:hover, .stopSnow:hover {
+  background-color: var(--nightBlue);
+  color: var(--snow);
+}
