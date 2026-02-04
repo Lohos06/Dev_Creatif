@@ -22,7 +22,7 @@
     top : var(--yPosition);
     background-color: var(--snow);
     width: 2px;
-    height: 10px;
+    height: 2px;
     animation: explosion ease 1s forwards;
 }
 
@@ -40,6 +40,6 @@
         transform: translate(0, 0);
     }
     to {
-        transform: translate(100px, -100px);
+        transform: translate(var(--xDirection), var(--yDirection));
     }
 }
