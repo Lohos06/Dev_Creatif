@@ -1,0 +1,45 @@
+.fireworkContainer {
+  position: relative;
+  width: 100svw;
+  height: 90svh;
+  background-color: var(--nightBlue);
+  overflow: hidden;
+}
+
+.firework {
+    position: absolute;
+    background-color: var(--snow);
+    width: 2px;
+    height: 10px;
+    left: 50%;
+    bottom: 0%;
+    animation: arise ease 2s forwards;
+}
+
+.particle {
+    position: absolute;
+    left: var(--xPosition);
+    top : var(--yPosition);
+    background-color: var(--snow);
+    width: 2px;
+    height: 10px;
+    animation: explosion ease 1s forwards;
+}
+
+@keyframes arise {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(0, -300px);
+    }
+}
+
+@keyframes explosion {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(100px, -100px);
+    }
+}

@@ -6,7 +6,7 @@ main {
     gap: 5rem;
 
     padding: 5rem;
-    background-color: var(--nightBlue);
+    background-color: black;
     color: var(--snow);
 }
 

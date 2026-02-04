@@ -1,4 +1,4 @@
-const snowContainer = document.getElementById('snowContent');
+const snowContainer = document.getElementById('snowContainer');
 
 // le son de la neige, ne marche pas pour l'instant
 // const snowFallingSound = new Audio('/assets/sounds/snowFalling.mp3');
