@@ -1,5 +1,7 @@
 :root {
-    --nightBlue : #001d6c;
+    --nightBlue : #000e36;
     --skyBlue : #6277be;
     --snow : #daf2ff;
+    --skyOrange : #ffba39;
+    --sunYellow : rgb(239, 239, 111);
 }
