@@ -8,6 +8,10 @@ main {
     padding: 5rem;
     background-color: black;
     color: var(--snow);
+
+    font-family: "Playwrite NZ Basic", cursive;
+    font-optical-sizing: auto;
+    font-weight: 500;
 }
 
 .section {

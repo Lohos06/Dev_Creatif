@@ -8,4 +8,5 @@
 .button:hover {
   background-color: var(--nightBlue);
   color: var(--snow);
+  border: 0.2rem solid var(--skyOrange);
 }
